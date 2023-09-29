@@ -6,12 +6,12 @@ OBJS = 		$(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): Libft/libft.a
+$(NAME): libft/libft.a
 	cc -Wall -Werror -Wextra $(SRCS) libft.a -o $(NAME)
 
-Libft/libft.a:
+libft/libft.a:
 	$(MAKE) -C ./libft
-	mv Libft/libft.a libft.a
+	cp libft/libft.a libft.a
 
 clean:
 	$(MAKE) clean -C ./libft
