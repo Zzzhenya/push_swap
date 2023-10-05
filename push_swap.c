@@ -1,6 +1,6 @@
-#include <unistd.h>
-#include <stdlib.h>
+#include "push_swap.h"
 
+/*
 int	ft_strlen(char  *str)
 {
 	int len;
@@ -12,6 +12,7 @@ int	ft_strlen(char  *str)
 		len ++;
 	return (len);
 }
+*/
 
 int main(int argc, char **argv)
 {

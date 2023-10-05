@@ -13,6 +13,10 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include <stdlib.h>
+# include <unistd.h>
+# include "libft/libft.h"
+
 typedef struct node
 {
 	int				content;
@@ -20,4 +24,4 @@ typedef struct node
 	struct node		*next;
 }					t_stack;
 
-#endif
+#endif	
