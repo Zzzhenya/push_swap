@@ -20,7 +20,6 @@
 typedef struct node
 {
 	int				content;
-	int				index;
 	struct node		*next;
 }					t_stack;
 
