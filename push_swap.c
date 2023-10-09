@@ -1,36 +1,71 @@
 #include "push_swap.h"
 
-/*
-int	ft_strlen(char  *str)
+int	parse_for_type(char *str)
 {
-	int len;
+	int		digits;
+	int		i;
 
-	len = 0;
-	if (!str)
-		return (len);
-	while (str[len] != '\0')
-		len ++;
-	return (len);
+	i = 0;
+	digits = 0;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		i ++;
+	}
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	{
+		i ++;
+		digits ++;
+	}
+	if (str[i] == '\0' && digits > 0)
+		return (0);
+	else
+		return (-1);
 }
-*/
 
-int main(int argc, char **argv)
+
+int	ft_parse(char **argv)
 {
-	int i;
+	int 	i;
 
-	i = 2;
-	if (argc == 2)
+	i = 1;
+	while (argv[i])
+	{
+		if (parse_for_type(argv[i]) < 0)
+			return (-1);
+		else
+		{
+		}
+		i ++;
+	}
+	//if (parse_for_dup(argv) < 0)
+	//	return (-1);
+	return (0);
+}
+
+int	main(int argc, char **argv)
+{
+	//t_stack	*a;
+	//t_stack *b;	
+
+	/*if (argc == 2)
 		write (1, argv[1], ft_strlen(argv[1]));
 	else if (argc > 2)
+	*/
+	if (argc < 2)
+		write (1, "Error\n", 6);
+	else //(argc >= 2)
 	{
-		while (i <= argc)
+		if(ft_parse(argv) < 0)
+			write (1, "Error\n", 6);
+		else
 		{
-			write (1, argv[i - 1], ft_strlen(argv[i - 1]));
-			if (i < argc)
-				write (1, " ", 1);
-			i ++;
+			while (*argv)
+			{
+				write (1, *argv, ft_strlen(*argv));
+				write (1, "\n", 1);
+				argv ++;
+			}
 		}
 	}
-	else
-		write (1, "\n", 1);
+	return (0);
 }
