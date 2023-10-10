@@ -9,11 +9,11 @@ int parse_for_dup(char **argv)
 	while (argv[i])
 	{
 		j = 1;
-		while (argv[j] && i != j && ft_atoi(argv[i]) != ft_atoi(argv[j]))
+		while (argv[j])
 		{
-			j ++;
-			if (argv[j] && i !=j && ft_atoi(argv[i]) == ft_atoi(argv[j]))
+			if (i != j && ft_atoi(argv[i]) == ft_atoi(argv[j]))
 				return (-1);
+			j ++;
 		}
 		i ++;
 	}
