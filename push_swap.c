@@ -60,8 +60,8 @@ int	ft_parse(char **argv)
 
 int	main(int argc, char **argv)
 {
-	//t_stack	*a;
-	//t_stack *b;	
+	//t_list	**a;
+	//t_list	**b;	
 
 	/*if (argc == 2)
 		write (1, argv[1], ft_strlen(argv[1]));
