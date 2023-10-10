@@ -1,5 +1,26 @@
 #include "push_swap.h"
 
+int parse_for_dup(char **argv)
+{
+	int	i;
+	int j;
+
+	i = 1;
+	while (argv[i])
+	{
+		j = 1;
+		while (argv[j] && i != j && ft_atoi(argv[i]) != ft_atoi(argv[j]))
+		{
+			j ++;
+			if (argv[j] && i !=j && ft_atoi(argv[i]) == ft_atoi(argv[j]))
+				return (-1);
+		}
+		i ++;
+	}
+	return (0);
+}
+
+
 int	parse_for_type(char *str)
 {
 	int		digits;
@@ -8,9 +29,7 @@ int	parse_for_type(char *str)
 	i = 0;
 	digits = 0;
 	if (str[i] == '-' || str[i] == '+')
-	{
 		i ++;
-	}
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
 		i ++;
@@ -32,13 +51,10 @@ int	ft_parse(char **argv)
 	{
 		if (parse_for_type(argv[i]) < 0)
 			return (-1);
-		else
-		{
-		}
 		i ++;
 	}
-	//if (parse_for_dup(argv) < 0)
-	//	return (-1);
+	if (parse_for_dup(argv) < 0)
+		return (-1);
 	return (0);
 }
 
@@ -55,7 +71,7 @@ int	main(int argc, char **argv)
 		write (1, "Error\n", 6);
 	else //(argc >= 2)
 	{
-		if(ft_parse(argv) < 0)
+		if (ft_parse(argv) < 0)
 			write (1, "Error\n", 6);
 		else
 		{
