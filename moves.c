@@ -36,23 +36,11 @@ int rev_rot_both(t_stack *a, t_stack *b)
 }
 */
 
-void    print_stack(t_stack **stack)
-{
-    t_stack *temp;
-
-    temp = *stack;
-    while (temp != NULL)
-    {
-        ft_putnbr_fd(temp->content, 1);
-        temp = temp->next;
-    }
-
-}
-
 void    ft_stkadd_front(t_stack **lst, t_stack *new)
 {
-    new->next = *lst;
-    *lst = new;
+    if(*lst)
+        new->next = *lst;
+    *lst = new; 
 }
 
 t_stack    *ft_stknew(int content)
@@ -72,12 +60,25 @@ void clear_stack(t_stack **stack)
     t_stack *temp;
 
     temp = 0;
-    while (*stack != NULL)
+    while (*stack)
     {
-        temp = (*stack)->next;
         (*stack)->content = 0;
-        free(*stack);
-        *stack = temp;
+        temp = *stack;
+        *stack = temp->next;
+        temp = NULL;
+        free(temp);
+    }
+}
+
+void    print_stack(t_stack *stack)
+{
+    t_stack *current;
+ 
+    current = stack;
+    while (current != NULL)
+    {
+        printf("%d\n", current->content);
+        current = current->next;
     }
 }
 
@@ -89,15 +90,17 @@ int main(void)
     i = 1;
     a = malloc(sizeof(t_stack **));
     if (!a)
-        return (-1);
-    
-    while (i < 11)
+        return (0);
+    *a = ft_stknew(i);
+    i ++;
+    while (i < 4)
     {
         ft_stkadd_front(a, ft_stknew(i));
         i ++;
     } 
-    print_stack(a);
+    print_stack(*a);
     clear_stack(a);
+    a = NULL;
     free(a);
     return (0);
 }
