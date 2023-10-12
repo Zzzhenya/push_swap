@@ -68,7 +68,8 @@ int	main(int argc, char **argv)
 	else if (argc > 2)
 	*/
 	if (argc < 2)
-		write (1, "Error\n", 6);
+		return (0);
+		//write (1, "Error\n", 6);
 	else //(argc >= 2)
 	{
 		if (ft_parse(argv) < 0)
