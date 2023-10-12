@@ -58,9 +58,34 @@ int	ft_parse(char **argv)
 	return (0);
 }
 
+//t_stack	store_in_stack(t_stack **a, char **argv, int c)
+void store_in_stack(char **argv, int argc)
+{
+	int i;
+
+	i = 0;
+	if (argc == 2)
+	{
+		write (1, argv[1], ft_strlen(argv[1]));
+		write (1, "\n", 1);
+	}
+	else
+	{
+		while (argv[i])
+		{
+			if (i > 0)
+			{
+				write (1, argv[i], ft_strlen(argv[i]));
+				write (1, "\n", 1);
+			}
+			i ++;
+		}
+	}
+}
+
 int	main(int argc, char **argv)
 {
-	//t_list	**a;
+	t_stack	**a;
 	//t_list	**b;	
 
 	/*if (argc == 2)
@@ -70,18 +95,25 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 		//write (1, "Error\n", 6);
-	else //(argc >= 2)
+	else if (argc == 2)
+	{
+		if (ft_parse(ft_split(argv[1], ' ')) < 0)
+			write (1, "Error\n", 6);
+		else
+		{
+			//a = store_in_stack(a, argv, argc);
+			//store_in_stack(ft_split(argv[1]), argc);
+			printf("Yet to implement\n");
+		}
+	}
+	else //(argc > 2)
 	{
 		if (ft_parse(argv) < 0)
 			write (1, "Error\n", 6);
 		else
 		{
-			while (*argv)
-			{
-				write (1, *argv, ft_strlen(*argv));
-				write (1, "\n", 1);
-				argv ++;
-			}
+			//a = store_in_stack(a, argv, argc);
+			store_in_stack(argv, argc);
 		}
 	}
 	return (0);
