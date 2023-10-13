@@ -46,4 +46,8 @@ void	rot(char c, t_stack **ptr);
 void	rev_rot(char c, t_stack **ptr);
 void	push(char c, t_stack **x, t_stack **y);
 
+//double moves
+void	swap_both(t_stack **a, t_stack **b);
+void	rot_both(t_stack **a, t_stack **b);
+void	rev_rot_both(t_stack **a, t_stack **b);
 #endif

@@ -1,10 +1,10 @@
 #include "push_swap.h"
 
-void swap(char c, t_stack **ptr)
+void	swap(char c, t_stack **ptr)
 {
 	t_stack *temp;
 
-	if ((*ptr)->next)
+	if (*ptr && (*ptr)->next)
 	{
 		temp = *ptr;
 		*ptr = temp ->next;
@@ -14,16 +14,14 @@ void swap(char c, t_stack **ptr)
 			write(1, "sa\n", 3);
 		else if (c == 'b')
 			write(1, "sb\n", 3);
-		else
-			write (1, "Error\n", 6);
 	}
 }
 
-void rot(char c, t_stack **ptr)
+void	rot(char c, t_stack **ptr)
 {
 	t_stack *temp;
 
-	if ((*ptr)->next)
+	if (*ptr && (*ptr)->next)
 	{
 		temp = *ptr;
 		*ptr = temp->next;
@@ -33,17 +31,15 @@ void rot(char c, t_stack **ptr)
 			write(1, "ra\n", 3);
 		else if (c == 'b')
 			write(1, "rb\n", 3);
-		else
-			write (1, "Error\n", 6);
 	}
 }
 
-void rev_rot(char c, t_stack **ptr)
+void	rev_rot(char c, t_stack **ptr)
 {
 	t_stack *b4last;
 	t_stack *temp;
 
-	if ((*ptr)->next)
+	if (*ptr && (*ptr)->next)
 	{
 		b4last = *ptr;
 		while (b4last->next && (b4last->next)->next)
@@ -55,8 +51,6 @@ void rev_rot(char c, t_stack **ptr)
 			write(1, "rra\n", 4);
 		else if (c == 'b')
 			write(1, "rrb\n", 4);
-		else
-			write (1, "Error\n", 6);
 	}
 }
 
@@ -80,19 +74,3 @@ void	push(char c, t_stack **x, t_stack **y)
 	}
 
 }
-/*
-int swap_both(t_stack *a, t_stack *b)
-{
-
-}
-
-int rot_both(t_stack *a, t_stack *b)
-{
-
-}
-
-int rev_rot_both(t_stack *a, t_stack *b)
-{
-
-}
-*/
