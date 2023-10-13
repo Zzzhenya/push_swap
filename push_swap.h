@@ -38,7 +38,7 @@ int			ft_stksize(t_stack *stack);
 int parse_for_dup(char **argv);
 int	parse_for_type(char *str);
 int	ft_parse(char **argv);
-void store_in_stack(char **argv, int argc);
+t_stack **store_in_stack(t_stack **a, char **argv, int argc);
 
 
 #endif
