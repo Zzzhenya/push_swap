@@ -37,28 +37,44 @@ int main(int argc, char **argv)
     if (argc < 2)
         return (0);
         //write (1, "Error\n", 6);
+    /*
     else if (argc == 2)
     {       // check for empty string
+        
         if (ft_parse(ft_split(argv[1], ' ')) < 0)
             write (1, "Error\n", 6);
         else
         {
             printf("Yet to implement\n");
         }
+        printf("Yet to implement\n");
     }
-    else //(argc > 2)
+    */
+    else
     {
-        if (ft_parse(argv) < 0)
-            write (1, "Error\n", 6);
+        if (argc > 2 )
+        {
+            if (ft_parse(argv) < 0)
+                write (1, "Error\n", 6);
+            else
+            {
+                a = store_in_stack(a, argv, argc);
+                *a = swap('a', *a);
+                print_stack(*a);
+                clear_stack(a);
+                free(a);
+                a = NULL;
+            }
+        }
         else
         {
             a = store_in_stack(a, argv, argc);
+            *a = swap('a', *a);
+            print_stack(*a);
+            clear_stack(a);
+            free(a);
+            a = NULL;
         }
     }
-    *a = swap('a', *a);
-    print_stack(*a);
-    clear_stack(a);
-    free(a);
-    a = NULL;
     return (0);
 }

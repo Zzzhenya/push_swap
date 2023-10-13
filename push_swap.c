@@ -67,6 +67,7 @@ t_stack **store_in_stack(t_stack **a, char **argv, int argc)
 	a = malloc(sizeof(t_stack **));
     if (!a)
         return (0);
+    /*
 	if (argc == 2)
 	{
 		write (1, argv[1], ft_strlen(argv[1]));
@@ -74,14 +75,15 @@ t_stack **store_in_stack(t_stack **a, char **argv, int argc)
 	}
 	else
 	{
-		*a = ft_stknew(ft_atoi(argv[i]));
-    	i ++;
-    	while (argv[i])
-    	{
-    		ft_stkadd_front(a, ft_stknew(ft_atoi(argv[i])));
-        	i ++;
-    	}
-    	return (a);
+	*/
+	*a = ft_stknew(ft_atoi(argv[i]));
+    i ++;
+    while (argv[i])
+    {
+    	ft_stkadd_front(a, ft_stknew(ft_atoi(argv[i])));
+        i ++;
+    }
+    return (a);
 		/*
 		while (argv[i])
 		{
@@ -93,6 +95,5 @@ t_stack **store_in_stack(t_stack **a, char **argv, int argc)
 			i ++;
 		}
 		*/
-	}
-	return (0);
+	//}
 }
