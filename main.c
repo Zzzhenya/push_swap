@@ -55,6 +55,7 @@ int main(int argc, char **argv)
             a = store_in_stack(a, argv, argc);
         }
     }
+    *a = swap('a', *a);
     print_stack(*a);
     clear_stack(a);
     free(a);
