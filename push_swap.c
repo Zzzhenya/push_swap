@@ -83,15 +83,16 @@ void store_in_stack(char **argv, int argc)
 	}
 }
 
+/*
 int	main(int argc, char **argv)
 {
 	t_stack	**a;
 	//t_list	**b;	
 
-	/*if (argc == 2)
-		write (1, argv[1], ft_strlen(argv[1]));
-	else if (argc > 2)
-	*/
+	//if (argc == 2)
+	//	write (1, argv[1], ft_strlen(argv[1]));
+	//else if (argc > 2)
+	
 	if (argc < 2)
 		return (0);
 		//write (1, "Error\n", 6);
@@ -118,3 +119,4 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
+*/
