@@ -22,7 +22,7 @@ void clear_stack(t_stack **stack)
         (*stack)->content = 0;
         temp = *stack;
         *stack = temp->next;
-        temp = NULL;
         free(temp);
+        temp = NULL;
     }
 }
