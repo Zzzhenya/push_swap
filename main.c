@@ -59,7 +59,9 @@ int main(int argc, char **argv)
             else
             {
                 a = store_in_stack(a, argv, argc);
-                *a = swap('a', *a);
+                //swap('a', a);
+                //rot('a', a);
+                rev_rot('a', a);
                 print_stack(*a);
                 clear_stack(a);
                 free(a);
@@ -69,7 +71,9 @@ int main(int argc, char **argv)
         else
         {
             a = store_in_stack(a, argv, argc);
-            *a = swap('a', *a);
+            //swap('a', a);
+            //rot('a', a);
+            rev_rot('a', a);
             print_stack(*a);
             clear_stack(a);
             free(a);

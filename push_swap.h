@@ -41,6 +41,8 @@ int	ft_parse(char **argv);
 t_stack **store_in_stack(t_stack **a, char **argv, int argc);
 
 //moves
-t_stack *swap(char c, t_stack *ptr);
+void	swap(char c, t_stack **ptr);
+void	rot(char c, t_stack **ptr);
+void	rev_rot(char c, t_stack **ptr);
 
 #endif
