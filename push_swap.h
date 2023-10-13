@@ -34,5 +34,11 @@ void		ft_stkadd_back(t_stack **stack, t_stack *new);
 t_stack    *ft_stknew(int content);
 int			ft_stksize(t_stack *stack);
 
+//push_swap
+int parse_for_dup(char **argv);
+int	parse_for_type(char *str);
+int	ft_parse(char **argv);
+void store_in_stack(char **argv, int argc);
+
 
 #endif
