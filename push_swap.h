@@ -24,4 +24,15 @@ typedef struct node
 	struct node		*next;
 }					t_stack;
 
-#endif	
+//debug utils
+void    print_stack(t_stack *stack);
+void	clear_stack(t_stack **stack);
+
+//stack utils
+void    	ft_stkadd_front(t_stack **stack, t_stack *new);
+void		ft_stkadd_back(t_stack **stack, t_stack *new);
+t_stack    *ft_stknew(int content);
+int			ft_stksize(t_stack *stack);
+
+
+#endif
