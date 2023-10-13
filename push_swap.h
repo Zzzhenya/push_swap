@@ -44,5 +44,6 @@ t_stack **store_in_stack(t_stack **a, char **argv, int argc);
 void	swap(char c, t_stack **ptr);
 void	rot(char c, t_stack **ptr);
 void	rev_rot(char c, t_stack **ptr);
+void	push(char c, t_stack **x, t_stack **y);
 
 #endif

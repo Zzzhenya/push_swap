@@ -60,12 +60,27 @@ void rev_rot(char c, t_stack **ptr)
 	}
 }
 
-/*
-int push(char c, t_stack *ptr)
+/* Push from x to y*/
+void	push(char c, t_stack **x, t_stack **y)
 {
+	t_stack	*temp;
+
+	if (*x)
+	{
+		temp = *x;
+		*x = (*x)->next;
+		temp->next = NULL;
+		ft_stkadd_front(y, temp);
+		if (c == 'a')
+			write(1, "pa\n", 3);
+		else if (c == 'b')
+			write(1, "pb\n", 3);
+		else
+			write (1, "Error\n", 6);
+	}
 
 }
-
+/*
 int swap_both(t_stack *a, t_stack *b)
 {
 

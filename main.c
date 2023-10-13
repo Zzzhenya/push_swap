@@ -31,9 +31,9 @@ int main(void)
 //Main for Push Swap
 int main(int argc, char **argv)
 {
-    t_stack **a;
-    //t_list    **b;    
-    
+    t_stack    **a;
+    t_stack    **b;    
+
     if (argc < 2)
         return (0);
         //write (1, "Error\n", 6);
@@ -59,25 +59,49 @@ int main(int argc, char **argv)
             else
             {
                 a = store_in_stack(a, argv, argc);
+                b = malloc(sizeof(t_stack));
+                if (!b)
+                    return (0);
                 //swap('a', a);
                 //rot('a', a);
-                rev_rot('a', a);
+                //rev_rot('a', a);
+                printf("stack a\n");
+                print_stack(*a);
+                push('b', a, b);
+                push('b', a, b);
+                push('b', a, b);
+                printf("stack a\n");
                 print_stack(*a);
                 clear_stack(a);
+                printf("stack b\n");
+                print_stack(*b);
+                rev_rot('b', b);
+                printf("stack b\n");
+                print_stack(*b);
+                clear_stack(b);
                 free(a);
+                free(b);
                 a = NULL;
+                b = NULL;
             }
         }
         else
         {
             a = store_in_stack(a, argv, argc);
+            b = malloc(sizeof(t_stack));
+            if (!b)
+                return (0);
             //swap('a', a);
             //rot('a', a);
             rev_rot('a', a);
             print_stack(*a);
             clear_stack(a);
+            print_stack(*b);
+            clear_stack(b);
             free(a);
+            free(b);
             a = NULL;
+            b = NULL;
         }
     }
     return (0);
