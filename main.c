@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-/*
+
 int main(void)
 {
     t_stack **a;
@@ -19,8 +19,7 @@ int main(void)
     } 
     print_stack(*a);
     clear_stack(a);
-    a = NULL;
     free(a);
+    a = NULL;
     return (0);
 }
-*/
