@@ -28,11 +28,33 @@ int main(void)
 }
 */
 
+/* max val*/
+
+int get_max(t_stack *stack)
+{
+    int max;
+    t_stack *current;
+
+    current = stack;
+    max = current->content;
+    while (current)
+    {
+        if (current->content > max)
+            max = current->content;
+        current=current->next;
+    }
+    return (max);
+
+}
+
+
 //Main for Push Swap
 int main(int argc, char **argv)
 {
     t_stack    **a;
-    t_stack    **b;    
+    t_stack    **b;
+    int size;
+    int max;
 
     if (argc < 2)
         return (0);
@@ -59,6 +81,11 @@ int main(int argc, char **argv)
             else
             {
                 a = store_in_stack(a, argv, argc);
+                size = ft_stksize(*a);
+                max = get_max(*a);
+                printf("size: %d\n", size);
+                printf("max: %d\n", max);
+                //check whether already ordered; if so exit.
                 b = malloc(sizeof(t_stack));
                 if (!b)
                     return (0);
