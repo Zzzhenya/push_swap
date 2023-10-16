@@ -6,7 +6,7 @@
 /*   By: sde-silv <sde-silv@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:52:34 by sde-silv          #+#    #+#             */
-/*   Updated: 2023/10/04 18:52:47 by sde-silv         ###   ########.fr       */
+/*   Updated: 2023/10/16 15:36:40 by sde-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int			ft_stksize(t_stack *stack);
 int parse_for_dup(char **argv);
 int	parse_for_type(char *str);
 int	ft_parse(char **argv);
-t_stack **store_in_stack(t_stack **a, char **argv, int argc);
+t_stack **store_in_stack(t_stack **a, char **argv);
 
 //moves
 void	swap(char c, t_stack **ptr);

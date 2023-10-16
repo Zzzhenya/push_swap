@@ -58,42 +58,20 @@ int	ft_parse(char **argv)
 	return (0);
 }
 
-//t_stack	store_in_stack(t_stack **a, char **argv, int argc)
-t_stack **store_in_stack(t_stack **a, char **argv, int argc)
+t_stack **store_in_stack(t_stack **a, char **argv)
 {
-	int 	i;
+	int	i;
 
 	i = 1;
 	a = malloc(sizeof(t_stack **));
-    if (!a)
-        return (0);
-    /*
-	if (argc == 2)
-	{
-		write (1, argv[1], ft_strlen(argv[1]));
-		write (1, "\n", 1);
-	}
-	else
-	{
-	*/
+	if (!a)
+        	return (0);
 	*a = ft_stknew(ft_atoi(argv[i]));
-    i ++;
-    while (argv[i])
-    {
-    	ft_stkadd_front(a, ft_stknew(ft_atoi(argv[i])));
-        i ++;
-    }
-    return (a);
-		/*
-		while (argv[i])
-		{
-			if (i > 0)
-			{
-				write (1, argv[i], ft_strlen(argv[i]));
-				write (1, "\n", 1);
-			}
-			i ++;
-		}
-		*/
-	//}
+	i ++;
+	while (argv[i])
+	{
+		ft_stkadd_front(a, ft_stknew(ft_atoi(argv[i])));
+        	i ++;
+    	}
+	return (a);
 }

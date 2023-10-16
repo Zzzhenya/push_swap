@@ -56,6 +56,7 @@ int main(int argc, char **argv)
     int size;
     int max;
 
+    a = NULL;
     if (argc < 2)
         return (0);
         //write (1, "Error\n", 6);
@@ -80,7 +81,7 @@ int main(int argc, char **argv)
                 write (1, "Error\n", 6);
             else
             {
-                a = store_in_stack(a, argv, argc);
+                a = store_in_stack(a, argv);
                 size = ft_stksize(*a);
                 max = get_max(*a);
                 printf("size: %d\n", size);
@@ -89,18 +90,6 @@ int main(int argc, char **argv)
                 b = malloc(sizeof(t_stack));
                 if (!b)
                     return (0);
-                push('b', a, b);
-                push('b', a, b);
-                push('b', a, b);
-                printf("a :\n");
-                print_stack(*a);
-                printf("b :\n");
-                print_stack(*b);
-                rev_rot_both(a, b);
-                printf("a :\n");
-                print_stack(*a);
-                printf("b :\n");
-                print_stack(*b);
                 clear_stack(a);
                 clear_stack(b);
                 free(a);
@@ -111,7 +100,7 @@ int main(int argc, char **argv)
         }
         else
         {
-            a = store_in_stack(a, argv, argc);
+            a = store_in_stack(a, argv);
             b = malloc(sizeof(t_stack));
             if (!b)
                 return (0);
