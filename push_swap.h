@@ -27,6 +27,7 @@ typedef struct node
 //debug utils
 void    print_stack(t_stack *stack);
 void	clear_stack(t_stack **stack);
+void    print_details(t_stack *stack);
 
 //stack utils
 void    	ft_stkadd_front(t_stack **stack, t_stack *new);
@@ -50,4 +51,7 @@ void	push(char c, t_stack **x, t_stack **y);
 void	swap_both(t_stack **a, t_stack **b);
 void	rot_both(t_stack **a, t_stack **b);
 void	rev_rot_both(t_stack **a, t_stack **b);
+
+//main
+int get_max(t_stack *stack);
 #endif

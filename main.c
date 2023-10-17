@@ -53,8 +53,8 @@ int main(int argc, char **argv)
 {
     t_stack    **a;
     t_stack    **b;
-    int size;
-    int max;
+    //int size;
+    //int max;
 
     a = NULL;
     if (argc < 2)
@@ -82,20 +82,15 @@ int main(int argc, char **argv)
             else
             {
                 a = store_in_stack(a, argv);
-                size = ft_stksize(*a);
-                max = get_max(*a);
-                printf("size: %d\n", size);
-                printf("max: %d\n", max);
+                //size = ft_stksize(*a);
+                //max = get_max(*a);
                 //check whether already ordered; if so exit.
                 b = malloc(sizeof(t_stack));
                 if (!b)
                     return (0);
+                print_details(*a);
                 clear_stack(a);
                 clear_stack(b);
-                free(a);
-                free(b);
-                a = NULL;
-                b = NULL;
             }
         }
         else
@@ -104,17 +99,9 @@ int main(int argc, char **argv)
             b = malloc(sizeof(t_stack));
             if (!b)
                 return (0);
-            //swap('a', a);
-            //rot('a', a);
-            rev_rot('a', a);
-            print_stack(*a);
             clear_stack(a);
-            print_stack(*b);
+            //print_stack(*b);
             clear_stack(b);
-            free(a);
-            free(b);
-            a = NULL;
-            b = NULL;
         }
     }
     return (0);

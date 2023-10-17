@@ -65,13 +65,13 @@ t_stack **store_in_stack(t_stack **a, char **argv)
 	i = 1;
 	a = malloc(sizeof(t_stack **));
 	if (!a)
-        	return (0);
+        return (0);
 	*a = ft_stknew(ft_atoi(argv[i]));
 	i ++;
 	while (argv[i])
 	{
 		ft_stkadd_front(a, ft_stknew(ft_atoi(argv[i])));
-        	i ++;
-    	}
+        i ++;
+    }
 	return (a);
 }
