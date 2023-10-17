@@ -7,7 +7,8 @@ SRCS = 		push_swap.c \
 			double_moves.c \
 			debug_utils.c \
 			sort_utils.c \
-			normalize.c
+			normalize.c \
+			radix_sort.c
 
 all: $(NAME)
 

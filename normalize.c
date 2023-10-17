@@ -1,7 +1,6 @@
 #include "push_swap.h"
 
 /* max loc*/
-
 t_stack *get_max_loc(t_stack *stack)
 {
     t_stack *max;
@@ -11,9 +10,7 @@ t_stack *get_max_loc(t_stack *stack)
         return (0);
     current = stack;
     while (current && current->nval > 0)
-    {
     	current = current->next;
-    }
     max = current;
     while (current)
     {
@@ -23,7 +20,6 @@ t_stack *get_max_loc(t_stack *stack)
     }
     return (max);
 }
-
 
 void normalize(t_stack **stack)
 {

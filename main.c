@@ -28,26 +28,6 @@ int main(void)
 }
 */
 
-/* max val*/
-
-int get_max(t_stack *stack)
-{
-    int max;
-    t_stack *current;
-
-    if (!stack)
-        return (0);
-    current = stack;
-    max = current->content;
-    while (current)
-    {
-        if (current->content > max)
-            max = current->content;
-        current=current->next;
-    }
-    return (max);
-}
-
 //Main for Push Swap
 int main(int argc, char **argv)
 {
@@ -90,6 +70,7 @@ int main(int argc, char **argv)
                     return (0);
                 //ft_sort(a, b);
                 normalize(a);
+                ft_radix_sort(a, b);
                 print_details('a',*a);
                 print_details('b',*b);
                 clear_stack(a);

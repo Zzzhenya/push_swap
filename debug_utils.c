@@ -5,7 +5,7 @@ void    print_details(char c, t_stack *stack)
     printf("stack%c\n", c);
     print_stack(stack);
     printf("%c size: %d\n",c, ft_stksize(stack));
-    printf("%c max: %d\n",c, get_max(stack));
+ //   printf("%c max: %d\n",c, get_max(stack));
 }
 
 
