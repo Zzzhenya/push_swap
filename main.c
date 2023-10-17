@@ -70,6 +70,7 @@ int main(int argc, char **argv)
                     return (0);
                 //ft_sort(a, b);
                 normalize(a);
+                print_details('a',*a);
                 ft_radix_sort(a, b);
                 print_details('a',*a);
                 print_details('b',*b);

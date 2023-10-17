@@ -14,8 +14,10 @@ void    binary_num(int i)
     }
     while (i > 0)
     {
-        num[a] = i & 1;//i%2;
-        i = i >> 1;//i = i/2;
+        //num[a] = i & 1;//i%2;
+        //i = i >> 1;//i = i/2;
+        num[a] = (i & 1);
+        i = i >> 1;
         a ++;
     }
     a --;
