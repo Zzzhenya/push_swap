@@ -31,26 +31,56 @@ void ft_radix_sort(t_stack **a, t_stack **b)
     int size_a;
     t_stack *this;
     int max;
-    //int dig;
+    int dig;
+    int size_b;
 
-    //dig = 1;
+    dig = 1;
     max = max_bin_digits(*a);
     size_a = ft_stksize(*a);
     printf("max bin digits: %d\n", max);
-    while (size_a > 0)
+    while (dig<max - 1)
     {
-        this = *a;
-        if ((this->nval & 1) == 1)
+        size_a = ft_stksize(*a);
+        while (size_a > 0)
         {
-            rot('a', a);
-            print_details('a', *a);  
+            this = *a;
+            if ((this->nval & dig) == 1)
+            {
+                rot('a', a);
+               // print_details('a', *a);  
+            }
+            else
+            {
+                push('b', a, b);
+               // print_details('b', *b);
+            }
+            size_a --;
         }
-        else
+        dig ++;
+        size_b = ft_stksize(*b);
+        while (size_b > 0)
         {
-            push('b', a, b);
-            print_details('b', *b);
+            this = *b;
+            if ((this->nval & dig) == 1)
+            {
+                rot('b', b);
+                //print_details('a', *a);
+            }
+            else
+            {
+                
+                push('a', b, a);
+                //print_details('b', *b);
+                
+            }
+            size_b --;
         }
-        size_a --;
+        size_b = ft_stksize(*b);
+        while (size_b > 0)
+        {
+            push('a', b, a);
+            size_b --;
+        }
     }
 }
 /*
