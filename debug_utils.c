@@ -1,10 +1,11 @@
 #include "push_swap.h"
 
-void    print_details(t_stack *stack)
+void    print_details(char c, t_stack *stack)
 {
+    printf("stack%c\n", c);
     print_stack(stack);
-    printf("size: %d\n", ft_stksize(stack));
-    printf("max: %d\n", get_max(stack));
+    printf("%c size: %d\n",c, ft_stksize(stack));
+    printf("%c max: %d\n",c, get_max(stack));
 }
 
 
@@ -13,9 +14,10 @@ void    print_stack(t_stack *stack)
     t_stack *current;
  
     current = stack;
+    printf("    nval: data\n");
     while (current != NULL)
     {
-        printf("%d\n", current->content);
+        printf("    %d: %d\n", current->nval,current->content);
         current = current->next;
     }
 }

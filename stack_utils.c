@@ -15,6 +15,7 @@ t_stack    *ft_stknew(int content)
     if (!new_node)
         return (0);
     new_node->content = content;
+    new_node->nval = 0;
     new_node->next = 0;
     return (new_node);
 }

@@ -35,6 +35,8 @@ int get_max(t_stack *stack)
     int max;
     t_stack *current;
 
+    if (!stack)
+        return (0);
     current = stack;
     max = current->content;
     while (current)
@@ -44,9 +46,7 @@ int get_max(t_stack *stack)
         current=current->next;
     }
     return (max);
-
 }
-
 
 //Main for Push Swap
 int main(int argc, char **argv)
@@ -88,7 +88,10 @@ int main(int argc, char **argv)
                 b = malloc(sizeof(t_stack));
                 if (!b)
                     return (0);
-                print_details(*a);
+                //ft_sort(a, b);
+                normalize(a);
+                print_details('a',*a);
+                print_details('b',*b);
                 clear_stack(a);
                 clear_stack(b);
             }

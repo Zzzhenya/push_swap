@@ -6,6 +6,8 @@ SRCS = 		push_swap.c \
 			moves.c \
 			double_moves.c \
 			debug_utils.c \
+			sort_utils.c \
+			normalize.c
 
 all: $(NAME)
 
@@ -19,10 +21,10 @@ Libft/libft.a:
 clean:
 	$(MAKE) clean -C ./libft
 	rm -f $(OBJS)
+	rm -f libft.a
 
 fclean: clean
 	$(MAKE) fclean -C ./libft
-	rm -f libft.a
 	rm -f $(NAME)
 
 re: fclean all

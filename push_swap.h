@@ -21,13 +21,14 @@
 typedef struct node
 {
 	int				content;
+	int				nval;
 	struct node		*next;
 }					t_stack;
 
 //debug utils
 void    print_stack(t_stack *stack);
 void	clear_stack(t_stack **stack);
-void    print_details(t_stack *stack);
+void    print_details(char c, t_stack *stack);
 
 //stack utils
 void    	ft_stkadd_front(t_stack **stack, t_stack *new);
@@ -54,4 +55,11 @@ void	rev_rot_both(t_stack **a, t_stack **b);
 
 //main
 int get_max(t_stack *stack);
+
+//sort_utils
+void	ft_sort(t_stack **a, t_stack **b);
+
+//normalize
+void normalize(t_stack **stack);
+
 #endif
