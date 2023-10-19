@@ -8,7 +8,9 @@ void ft_radix_sort(t_stack **a, t_stack **b, int max)
     int i;
 
     dig = 0; 
-    while (dig<max )
+    //while (dig<max )
+    printf("max: %d\n", max);   
+    while (dig < 3)
     {
         i = 0;
         size_a = ft_stksize(*a);
@@ -16,7 +18,7 @@ void ft_radix_sort(t_stack **a, t_stack **b, int max)
         {
             this = *a;
             if (((this->nval >> i) & 1) == 1)
-            {
+            {   
                 rot('a', a);
             }
             else
@@ -25,11 +27,13 @@ void ft_radix_sort(t_stack **a, t_stack **b, int max)
             }
             size_a --;
         }
+        print_details('b',*b);
         while (ft_stksize(*b) > 0)
         {
             push('a', b, a);
         }
         i ++;
         dig ++;
+        print_details('a',*a);
     }
 }
