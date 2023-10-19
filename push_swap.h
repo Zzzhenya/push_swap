@@ -63,6 +63,6 @@ void	ft_sort(t_stack **a, t_stack **b);
 void normalize(t_stack **stack);
 
 //radix sort
-void ft_radix_sort(t_stack **a, t_stack **b);
+void ft_radix_sort(t_stack **a, t_stack **b, int max);
 
 #endif

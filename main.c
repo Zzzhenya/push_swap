@@ -28,11 +28,38 @@ int main(void)
 }
 */
 
+/* max nval*/
+int max_bin_digits(t_stack *stack)
+{
+    int max;
+    int n;
+    t_stack *current;
+
+    n = 0;
+    if (!stack)
+        return (0);
+    current = stack;
+    max = current->nval;
+    while (current)
+    {
+        if (current->nval > max)
+            max = current->nval;
+        current=current->next;
+    }
+    while (max > 0)
+    {
+        max = max >> 1;
+        n ++;
+    }
+    return (n);
+}
+
 //Main for Push Swap
 int main(int argc, char **argv)
 {
     t_stack    **a;
     t_stack    **b;
+    int         max;
     //int size;
     //int max;
 
@@ -71,6 +98,7 @@ int main(int argc, char **argv)
                 //ft_sort(a, b);
                 normalize(a);
                 print_details('a',*a);
+                max = max_bin_digits(*a);
                 ft_radix_sort(a, b);
                 print_details('a',*a);
                 print_details('b',*b);
