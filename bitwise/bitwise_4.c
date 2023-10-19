@@ -15,12 +15,15 @@ int ft_len(int tab[])
 
 void    ft_bin(int tab[], int len)
 {
-    while (len > 1)
+    int i;
+
+    i = 0;
+    while (i < len)
     {
-        printf(" %d :", tab[len - 1]);
-        len --;
+        printf(" %d :", tab[i]);
+        i ++;
+        printf("\n");
     }
-    printf(" %d\n", tab[len - 1]);
 }
 
 int main (void)
