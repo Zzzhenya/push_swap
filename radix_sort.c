@@ -2,38 +2,29 @@
 
 void ft_radix_sort(t_stack **a, t_stack **b, int max)
 {
-    int size_a;
-    t_stack *this;
-    int dig;
-    int i;
+    int digit;
+    int size;
+    int j;
+    t_stack *current;
 
-    dig = 1; 
-    //while (dig<max )
-    printf("max: %d\n", max);   
-    while (dig <= max)
+    digit = 0;
+    printf("max%d\n", max);
+
+    size = ft_stksize(*a);
+    while (digit < max)
     {
-        i = 0;
-        size_a = ft_stksize(*a);
-        while (size_a > 0)
+        j = 0;
+        while (j < size)
         {
-            this = *a;
-            if (((this->nval >> i) & 1) == 0)
-            {   
-                push('b', a, b);
-            }
+            current = *a;
+            if (((current->nval >> digit) & 1) == 1)
+                rot ('a', a);
             else
-            {
-                rot('a', a);
-            }
-            size_a --;
+                push ('b', a, b);
+            j ++;
         }
-        print_details('b',*b);
+        digit ++;
         while (ft_stksize(*b) > 0)
-        {
-            push('a', b, a);
-        }
-        i ++;
-        dig ++;
-        print_details('a',*a);
-    }
+            push ('a', b, a);
+    }   
 }
