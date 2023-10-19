@@ -8,7 +8,7 @@ void ft_radix_sort(t_stack **a, t_stack **b, int max)
     t_stack *current;
 
     digit = 0;
-    printf("max%d\n", max);
+    //printf("max%d\n", max);
 
     size = ft_stksize(*a);
     while (digit < max)

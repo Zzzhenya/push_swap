@@ -97,11 +97,11 @@ int main(int argc, char **argv)
                     return (0);
                 //ft_sort(a, b);
                 normalize(a);
-                print_details('a',*a);
+                //print_details('a',*a);
                 max = max_bin_digits(*a);
                 ft_radix_sort(a, b, max);
                 print_details('a',*a);
-                print_details('b',*b);
+                //print_details('b',*b);
                 clear_stack(a);
                 clear_stack(b);
             }
