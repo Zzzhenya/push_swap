@@ -7,23 +7,23 @@ void ft_radix_sort(t_stack **a, t_stack **b, int max)
     int dig;
     int i;
 
-    dig = 0; 
+    dig = 1; 
     //while (dig<max )
     printf("max: %d\n", max);   
-    while (dig < 3)
+    while (dig <= max)
     {
         i = 0;
         size_a = ft_stksize(*a);
         while (size_a > 0)
         {
             this = *a;
-            if (((this->nval >> i) & 1) == 1)
+            if (((this->nval >> i) & 1) == 0)
             {   
-                rot('a', a);
+                push('b', a, b);
             }
             else
             {
-                push('b', a, b);
+                rot('a', a);
             }
             size_a --;
         }
