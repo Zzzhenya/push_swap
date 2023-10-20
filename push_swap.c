@@ -70,7 +70,8 @@ t_stack **store_in_stack(t_stack **a, char **argv)
 	i ++;
 	while (argv[i])
 	{
-		ft_stkadd_front(a, ft_stknew(ft_atoi(argv[i])));
+		//ft_stkadd_front(a, ft_stknew(ft_atoi(argv[i])));
+		ft_stkadd_back(a, ft_stknew(ft_atoi(argv[i])));
         i ++;
     }
 	return (a);
