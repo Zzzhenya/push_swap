@@ -21,7 +21,7 @@ t_stack *get_max_loc(t_stack *stack)
     return (max);
 }
 
-void normalize(t_stack **stack)
+void    normalize(t_stack **stack)
 {
 	int size;
 	t_stack *this;
@@ -34,4 +34,19 @@ void normalize(t_stack **stack)
 		size --;
 		this = get_max_loc(*stack);
 	}
+}
+
+int ft_issorted(t_stack *a)
+{
+    t_stack *current;
+
+    current = a;
+    while (current && current->next)
+    {
+        if (current->content < (current->next)->content)
+            current = current->next;
+        else
+            return (0);
+    }
+    return (1);
 }

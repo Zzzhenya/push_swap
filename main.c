@@ -59,7 +59,11 @@ int main(int argc, char **argv)
             else
             {
                 a = store_in_stack(a, argv);
-                //check whether already ordered; if so exit.
+                if (ft_issorted(*a))
+                {
+                    clear_stack(a);
+                    return (0);
+                }
                 b = malloc(sizeof(t_stack));
                 if (!b)
                     return (0);
