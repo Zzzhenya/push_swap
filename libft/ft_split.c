@@ -65,7 +65,7 @@ static char	*ft_copy_str(const char *s, int start, int len)
 	return (str);
 }
 
-void	ft_free(char **arr, int loc)
+static void	ft_free(char **arr, int loc)
 {
 	int i;
 
