@@ -1,5 +1,6 @@
 #include "push_swap.h"
 
+/*
 void    binary_num(int i)
 {
     int num[23];
@@ -52,7 +53,7 @@ void    print_stack(t_stack *stack)
         current = current->next;
     }
 }
-
+*/
 void clear_stack(t_stack **stack)
 {
     t_stack *temp;
@@ -69,3 +70,29 @@ void clear_stack(t_stack **stack)
     free (stack);
     stack = NULL;
 }
+/* Main for debug_utils and stack_utils testing
+int main(void)
+{
+    t_stack **a;
+    int     i;
+    int     arr[4] = {1, 2, 3, 4};
+
+    i = 0;
+    a = malloc(sizeof(t_stack **));
+    if (!a)
+        return (0);
+    *a = ft_stknew(arr[i]);
+    i ++;
+    while (i < 4)
+    {
+        ft_stkadd_front(a, ft_stknew(arr[i]));
+        i ++;
+    } 
+    print_stack(*a);
+
+    clear_stack(a);
+    free(a);
+    a = NULL;
+    return (0);
+}
+*/

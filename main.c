@@ -1,34 +1,6 @@
 #include "push_swap.h"
 
-
-/* Main for debug_utils and stack_utils testing
-int main(void)
-{
-    t_stack **a;
-    int     i;
-    int     arr[4] = {1, 2, 3, 4};
-
-    i = 0;
-    a = malloc(sizeof(t_stack **));
-    if (!a)
-        return (0);
-    *a = ft_stknew(arr[i]);
-    i ++;
-    while (i < 4)
-    {
-        ft_stkadd_front(a, ft_stknew(arr[i]));
-        i ++;
-    } 
-    print_stack(*a);
-
-    clear_stack(a);
-    free(a);
-    a = NULL;
-    return (0);
-}
-*/
-
-/* max nval*/
+/* max nval binary digits*/
 int max_bin_digits(t_stack *stack)
 {
     int max;
@@ -54,14 +26,12 @@ int max_bin_digits(t_stack *stack)
     return (n);
 }
 
-//Main for Push Swap
+/*Main for Push Swap*/
 int main(int argc, char **argv)
 {
     t_stack    **a;
     t_stack    **b;
     int         max;
-    //int size;
-    //int max;
 
     a = NULL;
     if (argc < 2)
@@ -89,32 +59,16 @@ int main(int argc, char **argv)
             else
             {
                 a = store_in_stack(a, argv);
-                //size = ft_stksize(*a);
-                //max = get_max(*a);
                 //check whether already ordered; if so exit.
                 b = malloc(sizeof(t_stack));
                 if (!b)
                     return (0);
-                //ft_sort(a, b);
                 normalize(a);
-                //print_details('a',*a);
                 max = max_bin_digits(*a);
                 ft_radix_sort(a, b, max);
-                //print_details('a',*a);
-                //print_details('b',*b);
                 clear_stack(a);
                 clear_stack(b);
             }
-        }
-        else
-        {
-            a = store_in_stack(a, argv);
-            b = malloc(sizeof(t_stack));
-            if (!b)
-                return (0);
-            clear_stack(a);
-            //print_stack(*b);
-            clear_stack(b);
         }
     }
     return (0);
