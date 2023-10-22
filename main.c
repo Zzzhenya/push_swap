@@ -26,54 +26,100 @@ int max_bin_digits(t_stack *stack)
     return (n);
 }
 
-/*Main for Push Swap*/
-int main(int argc, char **argv)
+int nums_as_args(char **argv)
 {
     t_stack    **a;
     t_stack    **b;
     int         max;
 
     a = NULL;
-    if (argc < 2)
+    if (ft_parse(argv) < 0)
+    {
+        write (1, "Error\n", 6);
         return (0);
-        //write (1, "Error\n", 6);
-    /*
-    else if (argc == 2)
-    {       // check for empty string
-        
-        if (ft_parse(ft_split(argv[1], ' ')) < 0)
-            write (1, "Error\n", 6);
-        else
-        {
-            printf("Yet to implement\n");
-        }
-        printf("Yet to implement\n");
     }
-    */
     else
     {
-        if (argc > 2 )
+        a = store_in_stack(a, argv);
+        if (ft_issorted(*a))
         {
-            if (ft_parse(argv) < 0)
-                write (1, "Error\n", 6);
-            else
-            {
-                a = store_in_stack(a, argv);
-                if (ft_issorted(*a))
-                {
-                    clear_stack(a);
-                    return (0);
-                }
-                b = malloc(sizeof(t_stack));
-                if (!b)
-                    return (0);
-                normalize(a);
-                max = max_bin_digits(*a);
-                ft_radix_sort(a, b, max);
-                clear_stack(a);
-                clear_stack(b);
-            }
+            clear_stack(a);
+            return (0);
         }
+        b = malloc(sizeof(t_stack));
+        if (!b)
+        {
+            clear_stack(a);
+            return (0);
+        }
+        normalize(a);
+        max = max_bin_digits(*a);
+        ft_radix_sort(a, b, max);
+        clear_stack(a);
+        clear_stack(b);
+    }
+    return (1);
+}
+
+int nums_as_str(char *str)
+{
+    char       **arr;
+    t_stack    **a;
+    t_stack    **b;
+    int         max;
+
+    a = NULL;
+    arr = NULL;
+    arr = ft_split(str, ' ');
+    if (!arr)
+        return (0);
+    if (ft_parse(arr) < 0)
+    {
+            // need to free the whole thing one by one
+            //free(arr);
+        write (1, "Error\n", 6);
+        return (0);
+    }
+    else
+    {
+        a = store_in_stack2(a, arr);
+        print_details('a', *a);
+        if (ft_issorted(*a))
+        {
+            clear_stack(a);
+            return (0);
+        }
+        b = malloc(sizeof(t_stack));
+        if (!b)
+            return (0);
+        normalize(a);
+        max = max_bin_digits(*a);
+        ft_radix_sort(a, b, max);
+        print_details('a', *a);
+        clear_stack(a);
+        clear_stack(b);
+        return (1);
+    }
+}
+
+/*Main for Push Swap*/
+int main(int argc, char **argv)
+{
+    if (argc < 2)
+        return (0);
+    else if (argc == 2)
+    {
+        if (nums_as_str(argv[1]))
+            return(0);
+        else
+            return (-1);
+    }
+    else
+    {
+        if (nums_as_args(argv))
+            return (0);
+        else
+            return (-1);
     }
     return (0);
 }

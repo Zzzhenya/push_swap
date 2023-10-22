@@ -41,6 +41,7 @@ int parse_for_dup(char **argv);
 int	parse_for_type(char *str);
 int	ft_parse(char **argv);
 t_stack **store_in_stack(t_stack **a, char **argv);
+t_stack **store_in_stack2(t_stack **a, char **argv);
 
 //moves
 void	swap(char c, t_stack **ptr);

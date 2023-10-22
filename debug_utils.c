@@ -1,6 +1,5 @@
 #include "push_swap.h"
 
-/*
 void    binary_num(int i)
 {
     int num[23];
@@ -53,7 +52,7 @@ void    print_stack(t_stack *stack)
         current = current->next;
     }
 }
-*/
+
 void clear_stack(t_stack **stack)
 {
     t_stack *temp;

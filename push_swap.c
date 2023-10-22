@@ -62,6 +62,7 @@ t_stack **store_in_stack(t_stack **a, char **argv)
 {
 	int	i;
 
+
 	i = 1;
 	a = malloc(sizeof(t_stack **));
 	if (!a)
@@ -73,5 +74,24 @@ t_stack **store_in_stack(t_stack **a, char **argv)
 		ft_stkadd_back(a, ft_stknew(ft_atoi(argv[i])));
         i ++;
     }
+	return (a);
+}
+
+t_stack **store_in_stack2(t_stack **a, char **argv)
+{
+	int	i;
+
+	i = 0;
+	a = malloc(sizeof(t_stack **));
+	if (!a)
+        return (0);
+	*a = ft_stknew(ft_atoi(argv[i]));
+	i ++;
+	while (argv[i])
+	{
+		ft_stkadd_back(a, ft_stknew(ft_atoi(argv[i])));
+        i ++;
+    }
+    print_details('a', *a);
 	return (a);
 }
