@@ -1,14 +1,14 @@
 #include "push_swap.h"
 
-int parse_for_dup(char **argv)
+int parse_for_dup(char **argv, int x)
 {
 	int	i;
 	int j;
 
-	i = 1;
+	i = x;
 	while (argv[i])
 	{
-		j = 1;
+		j = x;
 		while (argv[j])
 		{
 			if (i != j && ft_atoi(argv[i]) == ft_atoi(argv[j]))
@@ -42,28 +42,24 @@ int	parse_for_type(char *str)
 }
 
 
-int	ft_parse(char **argv)
+int	ft_parse(char **argv, int x)
 {
 	int 	i;
 
-	i = 1;
+	i = x;
 	while (argv[i])
 	{
 		if (parse_for_type(argv[i]) < 0)
 			return (-1);
 		i ++;
 	}
-	if (parse_for_dup(argv) < 0)
+	if (parse_for_dup(argv, x) < 0)
 		return (-1);
 	return (0);
 }
 
-t_stack **store_in_stack(t_stack **a, char **argv)
+t_stack **store_in_stack(t_stack **a, char **argv, int i)
 {
-	int	i;
-
-
-	i = 1;
 	a = malloc(sizeof(t_stack **));
 	if (!a)
         return (0);
@@ -74,24 +70,5 @@ t_stack **store_in_stack(t_stack **a, char **argv)
 		ft_stkadd_back(a, ft_stknew(ft_atoi(argv[i])));
         i ++;
     }
-	return (a);
-}
-
-t_stack **store_in_stack2(t_stack **a, char **argv)
-{
-	int	i;
-
-	i = 0;
-	a = malloc(sizeof(t_stack **));
-	if (!a)
-        return (0);
-	*a = ft_stknew(ft_atoi(argv[i]));
-	i ++;
-	while (argv[i])
-	{
-		ft_stkadd_back(a, ft_stknew(ft_atoi(argv[i])));
-        i ++;
-    }
-    print_details('a', *a);
 	return (a);
 }

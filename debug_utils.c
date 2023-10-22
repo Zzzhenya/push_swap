@@ -1,5 +1,5 @@
 #include "push_swap.h"
-
+/*
 void    binary_num(int i)
 {
     int num[23];
@@ -28,7 +28,7 @@ void    binary_num(int i)
     }
     printf("\n");
 }
-
+*/
 
 void    print_details(char c, t_stack *stack)
 {
@@ -47,8 +47,8 @@ void    print_stack(t_stack *stack)
     printf("    nval: data\n");
     while (current != NULL)
     {
-        printf("    %d: %d", current->nval, current->content);
-        binary_num(current->nval);
+        printf("    %d: %d\n", current->nval, current->content);
+        //binary_num(current->nval);
         current = current->next;
     }
 }

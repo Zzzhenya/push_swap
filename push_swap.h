@@ -37,11 +37,10 @@ t_stack    *ft_stknew(int content);
 int			ft_stksize(t_stack *stack);
 
 //push_swap
-int parse_for_dup(char **argv);
+int parse_for_dup(char **argv, int x);
 int	parse_for_type(char *str);
-int	ft_parse(char **argv);
-t_stack **store_in_stack(t_stack **a, char **argv);
-t_stack **store_in_stack2(t_stack **a, char **argv);
+int	ft_parse(char **argv, int x);
+t_stack **store_in_stack(t_stack **a, char **argv, int i);
 
 //moves
 void	swap(char c, t_stack **ptr);

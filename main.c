@@ -33,14 +33,14 @@ int nums_as_args(char **argv)
     int         max;
 
     a = NULL;
-    if (ft_parse(argv) < 0)
+    if (ft_parse(argv, 1) < 0)
     {
         write (1, "Error\n", 6);
         return (0);
     }
     else
     {
-        a = store_in_stack(a, argv);
+        a = store_in_stack(a, argv, 1);
         if (ft_issorted(*a))
         {
             clear_stack(a);
@@ -73,7 +73,7 @@ int nums_as_str(char *str)
     arr = ft_split(str, ' ');
     if (!arr)
         return (0);
-    if (ft_parse(arr) < 0)
+    if (ft_parse(arr, 0) < 0)
     {
             // need to free the whole thing one by one
             //free(arr);
@@ -82,8 +82,7 @@ int nums_as_str(char *str)
     }
     else
     {
-        a = store_in_stack2(a, arr);
-        print_details('a', *a);
+        a = store_in_stack(a, arr, 0);
         if (ft_issorted(*a))
         {
             clear_stack(a);
@@ -95,7 +94,6 @@ int nums_as_str(char *str)
         normalize(a);
         max = max_bin_digits(*a);
         ft_radix_sort(a, b, max);
-        print_details('a', *a);
         clear_stack(a);
         clear_stack(b);
         return (1);
