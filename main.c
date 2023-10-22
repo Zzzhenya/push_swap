@@ -55,7 +55,7 @@ int ft_init(char **argv, int x)
         clear_stack(a);
         return (0);
     }
-    b = malloc(sizeof(t_stack ));
+    b = malloc(sizeof(t_stack **));
     if (!b)
     {
         clear_stack(a);
