@@ -56,8 +56,8 @@ void	rev_rot_both(t_stack **a, t_stack **b);
 //main
 int get_max(t_stack *stack);
 
-//sort_utils
-void	ft_sort(t_stack **a, t_stack **b);
+//basic_sort
+void	basic_sort(t_stack **a, t_stack **b);
 
 //normalize
 void normalize(t_stack **stack);

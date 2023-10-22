@@ -8,7 +8,7 @@ SRCS = 		push_swap.c \
 			moves.c \
 			double_moves.c \
 			debug_utils.c \
-			sort_utils.c \
+			basic_sort.c \
 			normalize.c \
 			radix_sort.c
 

@@ -30,7 +30,7 @@ int ft_pushswap(t_stack **a, t_stack **b)
 {
     int         max;
 
-    if (ft_stksize(a) <= 5)
+    if (ft_stksize(*a) <= 5)
         basic_sort(a, b);
     else
     {
