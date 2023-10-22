@@ -17,10 +17,10 @@ all: $(NAME)
 $(NAME): $(LIBFT)
 	cc -Wall -Werror -Wextra $(SRCS) $(LIBFT) -o $(NAME)
 
-$(LIBFT):Libft/libft.a
+$(LIBFT):libft/libft.a
 	cp libft/libft.a $(LIBFT)
 
-Libft/libft.a:
+libft/libft.a:
 	$(MAKE) -C ./libft
 
 clean:
