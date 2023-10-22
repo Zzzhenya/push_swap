@@ -1,5 +1,7 @@
 NAME = push_swap
 
+LIBFT = libft.a
+
 SRCS = 		push_swap.c \
 			main.c \
 			stack_utils.c \
@@ -12,29 +14,24 @@ SRCS = 		push_swap.c \
 
 all: $(NAME)
 
-$(NAME): Libft/libft.a
-	cc -Wall -Werror -Wextra $(SRCS) libft.a -o $(NAME)
+$(NAME): $(LIBFT)
+	cc -Wall -Werror -Wextra $(SRCS) $(LIBFT) -o $(NAME)
+
+$(LIBFT):Libft/libft.a
+	cp libft/libft.a $(LIBFT)
 
 Libft/libft.a:
 	$(MAKE) -C ./libft
-	cp libft/libft.a libft.a
 
 clean:
 	$(MAKE) clean -C ./libft
 	rm -f $(OBJS)
-	rm -f libft.a
+	rm -f $(LIBFT)
 
 fclean: clean
 	$(MAKE) fclean -C ./libft
 	rm -f $(NAME)
 
 re: fclean all
-
-tests:
-	make re
-	cc tester.c libftprintf.a
-	valgrind --leak-check=yes ./a.out
-	make fclean
-	rm a.out
 
 .PHONY: all fclean re clean tests
