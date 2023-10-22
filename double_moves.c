@@ -30,3 +30,4 @@ void	rev_rot_both(t_stack **a, t_stack **b)
 	}
 		
 }
+
