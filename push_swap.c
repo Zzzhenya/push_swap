@@ -82,7 +82,5 @@ t_stack	**store_in_stack(t_stack **a, char **argv, int x)
 		ft_stkadd_back(a, ft_stknew(ft_atoi(argv[i])));
 		i ++;
 	}
-	if (x == 0)
-		free_arr(argv);
 	return (a);
 }
