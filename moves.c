@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   moves.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sde-silv <sde-silv@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/23 12:53:19 by sde-silv          #+#    #+#             */
+/*   Updated: 2023/10/23 13:24:17 by sde-silv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	swap(char c, t_stack **ptr)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	if (*ptr && (*ptr)->next)
 	{
@@ -19,7 +31,7 @@ void	swap(char c, t_stack **ptr)
 
 void	rot(char c, t_stack **ptr)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	if (*ptr && (*ptr)->next)
 	{
@@ -36,8 +48,8 @@ void	rot(char c, t_stack **ptr)
 
 void	rev_rot(char c, t_stack **ptr)
 {
-	t_stack *b4last;
-	t_stack *temp;
+	t_stack	*b4last;
+	t_stack	*temp;
 
 	if (*ptr && (*ptr)->next)
 	{
@@ -72,5 +84,4 @@ void	push(char c, t_stack **x, t_stack **y)
 		else
 			write (1, "Error\n", 6);
 	}
-
 }

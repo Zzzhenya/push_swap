@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sde-silv <sde-silv@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/23 13:17:40 by sde-silv          #+#    #+#             */
+/*   Updated: 2023/10/23 13:17:51 by sde-silv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int parse_for_dup(char **argv, int x)
+int	parse_for_dup(char **argv, int x)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = x;
 	while (argv[i])
@@ -19,7 +31,6 @@ int parse_for_dup(char **argv, int x)
 	}
 	return (0);
 }
-
 
 int	parse_for_type(char *str)
 {
@@ -41,10 +52,9 @@ int	parse_for_type(char *str)
 		return (-1);
 }
 
-
 int	ft_parse(char **argv, int x)
 {
-	int 	i;
+	int	i;
 
 	i = x;
 	while (argv[i])
@@ -58,17 +68,17 @@ int	ft_parse(char **argv, int x)
 	return (0);
 }
 
-t_stack **store_in_stack(t_stack **a, char **argv, int i)
+t_stack	**store_in_stack(t_stack **a, char **argv, int i)
 {
 	a = malloc(sizeof(t_stack **));
 	if (!a)
-        return (0);
+		return (0);
 	*a = ft_stknew(ft_atoi(argv[i]));
 	i ++;
 	while (argv[i])
 	{
 		ft_stkadd_back(a, ft_stknew(ft_atoi(argv[i])));
-        i ++;
-    }
+		i ++;
+	}
 	return (a);
 }

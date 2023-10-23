@@ -6,7 +6,7 @@
 /*   By: sde-silv <sde-silv@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 14:47:28 by sde-silv          #+#    #+#             */
-/*   Updated: 2023/06/12 16:03:37 by sde-silv         ###   ########.fr       */
+/*   Updated: 2023/10/23 13:52:34 by sde-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,9 @@ static char	*ft_copy_str(const char *s, int start, int len)
 	return (str);
 }
 
-static void	ft_free(char **arr, int loc)
+static int	ft_free(char **arr, int loc)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (arr[i] && i <= loc)
@@ -78,6 +78,7 @@ static void	ft_free(char **arr, int loc)
 	}
 	free(arr);
 	arr = NULL;
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
@@ -101,10 +102,7 @@ char	**ft_split(char const *s, char c)
 		{
 			arr[str] = ft_copy_str(s, start, i);
 			if (!arr[str])
-			{
-				ft_free(arr, str);
-				return (NULL);
-			}
+				return (ft_free(arr, str));
 			str ++;
 			start = -1;
 		}
