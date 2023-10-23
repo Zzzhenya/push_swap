@@ -6,14 +6,14 @@
 /*   By: sde-silv <sde-silv@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:11:41 by sde-silv          #+#    #+#             */
-/*   Updated: 2023/10/23 13:37:06 by sde-silv         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:53:26 by sde-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* max nval binary digits*/
-int	max_bin_digits(t_stack *stack)
+static int	max_bin_digits(t_stack *stack)
 {
 	int			max;
 	int			n;
@@ -38,7 +38,7 @@ int	max_bin_digits(t_stack *stack)
 	return (n);
 }
 
-int	ft_pushswap(t_stack **a, t_stack **b)
+static void	ft_pushswap(t_stack **a, t_stack **b)
 {
 	int	max;
 
@@ -52,15 +52,15 @@ int	ft_pushswap(t_stack **a, t_stack **b)
 	}
 	clear_stack(a);
 	clear_stack(b);
-	return (1);
 }
 
-int	ft_init(char **argv, int x)
+static int	ft_init(char **argv, int x)
 {
 	t_stack	**a;
 	t_stack	**b;
 
 	a = NULL;
+	b = NULL;
 	if (ft_parse(argv, x) < 0)
 	{
 		write (1, "Error\n", 6);
@@ -72,14 +72,14 @@ int	ft_init(char **argv, int x)
 		clear_stack(a);
 		return (0);
 	}
-	b = malloc(sizeof(t_stack **));
+	b = malloc (sizeof(t_stack));
 	if (!b)
 	{
 		clear_stack(a);
 		return (0);
 	}
-	if (!ft_pushswap(a, b))
-		return (0);
+	*b = NULL;
+	ft_pushswap(a, b);
 	return (1);
 }
 

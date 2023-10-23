@@ -30,6 +30,7 @@ typedef struct node
 void	print_stack(t_stack *stack);
 void	clear_stack(t_stack **stack);
 void	print_details(char c, t_stack *stack);
+void	free_arr(char **arr);
 
 //	stack utils
 
@@ -57,10 +58,6 @@ void	push(char c, t_stack **x, t_stack **y);
 void	swap_both(t_stack **a, t_stack **b);
 void	rot_both(t_stack **a, t_stack **b);
 void	rev_rot_both(t_stack **a, t_stack **b);
-
-//	main
-
-int		get_max(t_stack *stack);
 
 //	basic_sort
 

@@ -68,17 +68,21 @@ int	ft_parse(char **argv, int x)
 	return (0);
 }
 
-t_stack	**store_in_stack(t_stack **a, char **argv, int i)
+t_stack	**store_in_stack(t_stack **a, char **argv, int x)
 {
+	int	i;
+
+	i = x;
 	a = malloc(sizeof(t_stack **));
 	if (!a)
 		return (0);
-	*a = ft_stknew(ft_atoi(argv[i]));
-	i ++;
+	*a = NULL;
 	while (argv[i])
 	{
 		ft_stkadd_back(a, ft_stknew(ft_atoi(argv[i])));
 		i ++;
 	}
+	if (x == 0)
+		free_arr(argv);
 	return (a);
 }
