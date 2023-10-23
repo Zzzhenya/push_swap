@@ -42,11 +42,11 @@ static void	ft_pushswap(t_stack **a, t_stack **b)
 {
 	int	max;
 
+	normalize(a);
 	if (ft_stksize(*a) <= 5)
 		basic_sort(a, b);
 	else
 	{
-		normalize(a);
 		max = max_bin_digits(*a);
 		ft_radix_sort(a, b, max);
 	}
