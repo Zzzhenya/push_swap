@@ -102,7 +102,10 @@ char	**ft_split(char const *s, char c)
 		{
 			arr[str] = ft_copy_str(s, start, i);
 			if (!arr[str])
-				return (ft_free(arr, str));
+			{
+				ft_free(arr, str);
+				return (0);
+			}
 			str ++;
 			start = -1;
 		}
