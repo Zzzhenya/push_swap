@@ -6,7 +6,7 @@
 /*   By: sde-silv <sde-silv@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:01:29 by sde-silv          #+#    #+#             */
-/*   Updated: 2023/10/23 13:29:54 by sde-silv         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:48:16 by sde-silv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	clear_stack(t_stack **stack)
 	while (*stack)
 	{
 		(*stack)->content = 0;
-        (*stack)->nval = 0;
+		(*stack)->nval = 0;
 		temp = *stack;
 		*stack = temp->next;
 		free(temp);
@@ -78,6 +78,21 @@ void	clear_stack(t_stack **stack)
 	}
 	free (stack);
 	stack = NULL;
+}
+
+void	free_arr(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		arr[i] = NULL;
+		i ++;
+	}
+	free(arr);
+	arr = NULL;
 }
 /* Main for debug_utils and stack_utils testing
 int main(void)
