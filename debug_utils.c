@@ -70,6 +70,7 @@ void	clear_stack(t_stack **stack)
 	while (*stack)
 	{
 		(*stack)->content = 0;
+        (*stack)->nval = 0;
 		temp = *stack;
 		*stack = temp->next;
 		free(temp);
