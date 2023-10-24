@@ -18,10 +18,10 @@ void    binary_num(int i)
     int a;
     a = 0;
     //printf("%d :", i);
-    printf(" : ");
+    ft_printf(" : ");
     if (i ==0)
     {
-        printf("0\n");
+        ft_printf("0\n");
         exit(0);
     }
     while (i > 0)
@@ -35,18 +35,18 @@ void    binary_num(int i)
     a --;
     while (a >= 0)
     {
-        printf("%d",num[a]);
+        ft_printf("%d",num[a]);
         a --;
     }
-    printf("\n");
+    ft_printf("\n");
 }
 */
 
 void	print_details(char c, t_stack *stack)
 {
-	printf ("stack%c\n", c);
+	ft_printf ("stack%c\n", c);
 	print_stack(stack);
-	printf ("%c size: %d\n", c, ft_stksize(stack));
+	ft_printf ("%c size: %d\n", c, ft_stksize(stack));
 }
 
 void	print_stack(t_stack *stack)
@@ -54,10 +54,10 @@ void	print_stack(t_stack *stack)
 	t_stack	*current;
 
 	current = stack;
-	printf("    nval: data\n");
+	ft_printf("    nval: data\n");
 	while (current != NULL)
 	{
-		printf("    %d: %d\n", current->nval, current->content);
+		ft_printf("    %d: %d\n", current->nval, current->content);
 		current = current->next;
 	}
 }
