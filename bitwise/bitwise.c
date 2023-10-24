@@ -1,4 +1,4 @@
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h> 
 
 void    bitwise_stuff(int i)
@@ -33,3 +33,4 @@ int main(void)
     
     return (0);
 }
+*/
