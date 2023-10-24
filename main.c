@@ -63,7 +63,7 @@ static int	ft_init(char **argv, int x)
 	b = NULL;
 	if (ft_parse(argv, x) < 0)
 	{
-		write (1, "Error\n", 6);
+		write (2, "Error\n", 6);
 		return (0);
 	}
 	a = store_in_stack(a, argv, x);
