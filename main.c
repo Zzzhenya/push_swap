@@ -70,16 +70,10 @@ static int	ft_init(char **argv, int x)
 	if (!a)
 		return (0);
 	if (ft_issorted(*a))
-	{
-		clear_stack(a);
-		return (0);
-	}
+		return (clear_stack(a));
 	b = malloc (sizeof(t_stack));
 	if (!b)
-	{
-		clear_stack(a);
-		return (0);
-	}
+		return (clear_stack(a));
 	*b = NULL;
 	ft_pushswap(a, b);
 	if (x == 0)
