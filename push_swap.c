@@ -71,6 +71,7 @@ int	ft_parse(char **argv, int x)
 t_stack	**store_in_stack(t_stack **a, char **argv, int x)
 {
 	int	i;
+	long long c;
 
 	i = x;
 	a = malloc(sizeof(t_stack **));
@@ -79,8 +80,18 @@ t_stack	**store_in_stack(t_stack **a, char **argv, int x)
 	*a = NULL;
 	while (argv[i])
 	{
-		ft_stkadd_back(a, ft_stknew(ft_atoi(argv[i])));
-		i ++;
+		c = ft_atoi(argv[i]);
+		if (c >= -2147483648 && c <= 2147483647)
+		{
+			ft_stkadd_back(a, ft_stknew(c));
+			i ++;
+		}
+		else
+		{
+			clear_stack(a);
+			return (0);
+		}
+		
 	}
 	return (a);
 }

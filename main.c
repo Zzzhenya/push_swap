@@ -67,8 +67,11 @@ static int	ft_init(char **argv, int x)
 		return (0);
 	}
 	a = store_in_stack(a, argv, x);
-	if (!a)
+	if (a == 0)
+	{
+		write (2, "Error\n", 6);
 		return (0);
+	}
 	if (ft_issorted(*a))
 		return (clear_stack(a));
 	b = malloc (sizeof(t_stack));
