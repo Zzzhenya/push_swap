@@ -27,7 +27,7 @@ typedef struct node
 //	debug utils
 
 void	print_stack(t_stack *stack);
-void	clear_stack(t_stack **stack);
+int		clear_stack(t_stack **stack);
 void	print_details(char c, t_stack *stack);
 void	free_arr(char **arr);
 

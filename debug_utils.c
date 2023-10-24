@@ -62,7 +62,7 @@ void	print_stack(t_stack *stack)
 	}
 }
 
-void	clear_stack(t_stack **stack)
+int	clear_stack(t_stack **stack)
 {
 	t_stack	*temp;
 
@@ -78,6 +78,7 @@ void	clear_stack(t_stack **stack)
 	}
 	free (stack);
 	stack = NULL;
+	return (0);
 }
 
 void	free_arr(char **arr)
