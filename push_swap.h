@@ -29,7 +29,7 @@ typedef struct node
 void	print_stack(t_stack *stack);
 int		clear_stack(t_stack **stack);
 void	print_details(char c, t_stack *stack);
-void	free_arr(char **arr);
+int		free_arr(char **arr);
 
 //	stack utils
 

@@ -16,7 +16,7 @@ void	ft_stkadd_front(t_stack **stack, t_stack *new)
 {
 	if (*stack)
 		new->next = *stack;
-	*stack = new; 
+	*stack = new;
 }
 
 t_stack	*ft_stknew(int content)
@@ -42,7 +42,7 @@ void	ft_stkadd_back(t_stack **stack, t_stack *new)
 	{
 		temp = *stack;
 		while (temp->next != 0)
-			temp = temp->next; 
+			temp = temp->next;
 		temp->next = new;
 	}
 }

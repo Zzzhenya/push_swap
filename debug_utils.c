@@ -81,7 +81,7 @@ int	clear_stack(t_stack **stack)
 	return (0);
 }
 
-void	free_arr(char **arr)
+int	free_arr(char **arr)
 {
 	int	i;
 
@@ -94,6 +94,7 @@ void	free_arr(char **arr)
 	}
 	free(arr);
 	arr = NULL;
+	return (0);
 }
 /* Main for debug_utils and stack_utils testing
 int main(void)

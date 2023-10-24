@@ -95,24 +95,13 @@ int	main(int argc, char **argv)
 		if (!arr)
 			return (0);
 		if (arr[0] == (void *)0)
-		{
-			free_arr(arr);
-			return (0);
-		}
+			return (free_arr(arr));
 		if (ft_init(arr, 0))
 			return (0);
 		else
-		{
-			free_arr(arr);
-			return (-1);
-		}
+			return (free_arr(arr));
 	}
 	else
-	{
-		if (ft_init(argv, 1))
-			return (0);
-		else
-			return (-1);
-	}
+		ft_init(argv, 1);
 	return (0);
 }
