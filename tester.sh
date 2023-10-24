@@ -1,11 +1,12 @@
 #!/bin/bash
 
-make re -s
-echo "				make re"
 #./push_swap $@
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	{
+		norminette
+		make re -s
+		echo "				make re"
 		echo "				leak check"
 		valgrind ./push_swap $@
 		echo "							"
@@ -18,6 +19,9 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	}
 else
 	{
+		bash /Users/shenya/norm.sh
+		make re -s
+		echo "				make re"
 		ARG=$@; ./push_swap $ARG | ./checker* $ARG
 		echo "				checker"
 		./push_swap $@ | wc -l
