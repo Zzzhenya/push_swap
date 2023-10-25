@@ -50,10 +50,14 @@ static void	ft_pushswap(t_stack **a, t_stack **b)
 		max = max_bin_digits(*a);
 		ft_radix_sort(a, b, max);
 	}
-	//print_details('a', *a);
-	//print_details('b', *b);
 	clear_stack(a);
 	clear_stack(b);
+}
+
+static int	ft_err(void)
+{
+	write (2, "Error\n", 6);
+	return (0);
 }
 
 static int	ft_init(char **argv, int x)
@@ -64,16 +68,10 @@ static int	ft_init(char **argv, int x)
 	a = NULL;
 	b = NULL;
 	if (ft_parse(argv, x) < 0)
-	{
-		write (2, "Error\n", 6);
-		return (0);
-	}
+		return (ft_err());
 	a = store_in_stack(a, argv, x);
 	if (a == 0)
-	{
-		write (2, "Error\n", 6);
-		return (0);
-	}
+		return (ft_err());
 	if (ft_issorted(*a))
 		return (clear_stack(a));
 	b = malloc (sizeof(t_stack));
