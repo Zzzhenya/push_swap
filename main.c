@@ -50,6 +50,8 @@ static void	ft_pushswap(t_stack **a, t_stack **b)
 		max = max_bin_digits(*a);
 		ft_radix_sort(a, b, max);
 	}
+	//print_details('a', *a);
+	//print_details('b', *b);
 	clear_stack(a);
 	clear_stack(b);
 }

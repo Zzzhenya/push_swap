@@ -16,14 +16,22 @@ int	parse_for_dup(char **argv, int x)
 {
 	int	i;
 	int	j;
+	long long a;
+	long long b;
 
 	i = x;
 	while (argv[i])
 	{
+		a = ft_atoll(argv[i]);
+		if (a < -2147483648 || a > 2147483647)
+			return (-1);
 		j = x;
-		while (argv[j])
+		while (argv[j] )
 		{
-			if (i != j && ft_atoi(argv[i]) == ft_atoi(argv[j]))
+			b = ft_atoll(argv[j]);
+			if (b < -2147483648 || b > 2147483647)
+				return (-1);
+			if (i != j && a == b)
 				return (-1);
 			j ++;
 		}
@@ -80,7 +88,7 @@ t_stack	**store_in_stack(t_stack **a, char **argv, int x)
 	*a = NULL;
 	while (argv[i])
 	{
-		c = ft_atoi(argv[i]);
+		c = ft_atoll(argv[i]);
 		if (c >= -2147483648 && c <= 2147483647)
 		{
 			ft_stkadd_back(a, ft_stknew(c));
