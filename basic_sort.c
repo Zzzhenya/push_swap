@@ -36,7 +36,7 @@ static void	ft_sort_23(t_stack **a, int x)
 
 static void	ft_sort_4(t_stack **a, t_stack **b)
 {
-	t_stack *current;
+	t_stack	*current;
 
 	current = *a;
 	while (current->nval < 4)
@@ -56,7 +56,7 @@ static void	ft_sort_4(t_stack **a, t_stack **b)
 
 static void	ft_sort_5(t_stack **a, t_stack **b, int x)
 {
-	t_stack *current;
+	t_stack	*current;
 
 	current = *a;
 	while (x > 0)
@@ -80,13 +80,13 @@ static void	ft_sort_5(t_stack **a, t_stack **b, int x)
 
 void	basic_sort(t_stack **a, t_stack **b)
 {
-	int size;
+	int	size;
 
 	size = ft_stksize(*a);
 	if (*a)
 	{
 		if (size == 1)
-			return;
+			exit (0);
 		else if (size == 2)
 			ft_sort_23(a, 2);
 		else if (size == 3)

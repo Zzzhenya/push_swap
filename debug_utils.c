@@ -123,18 +123,11 @@ int main(void)
 }
 */
 
-static int	ft_isspace(int c)
-{
-	if (c == ' ' || (c >= '\t' && c <= '\r'))
-		return (1);
-	return (0);
-}
-
 long long	ft_atoll(const char *nptr)
 {
-	int		i;
-	long long		n;
-	int		sign;
+	int			i;
+	long long	n;
+	int			sign;
 
 	i = 0;
 	sign = 1;
@@ -154,4 +147,3 @@ long long	ft_atoll(const char *nptr)
 	}
 	return (sign * n);
 }
-
