@@ -14,37 +14,27 @@
 
 static void	ft_sort_23(t_stack **a, int x, int c)
 {
-	t_stack	*current;
-
-	current = *a;
 	if (x == 2)
 	{
-		if (current->nval > (current->next)->nval)
+		if ((*a)->nval > ((*a)->next)->nval)
 			rot(c, a);
 	}
 	else
 	{
-		if (current->nval < (current->next)->nval)
+		if ((*a)->nval < ((*a)->next)->nval)
 			rev_rot(c, a);
-		else if (current->nval == 3)
+		else if ((*a)->nval == 3)
 			rot(c, a);
-		current = *a;
-		if (current->nval > (current->next)->nval)
+		if ((*a)->nval > ((*a)->next)->nval)
 			swap(c, a);
 	}
 }
 
 static void	ft_sort_4(t_stack **a, t_stack **b)
 {
-	t_stack	*current;
-
-	current = *a;
-	while (current->nval < 4)
-	{
+	while ((*a)->nval < 4)
 		rot ('a', a);
-		current = *a;
-	}
-	if (current->nval == 4)
+	if ((*a)->nval == 4)
 	{
 		push ('b', a, b);
 		if (!ft_issorted(*a))
