@@ -98,4 +98,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 int		ft_isspace(int c);
 
+long long	ft_atoll(const char *nptr);
+
 #endif
