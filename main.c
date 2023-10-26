@@ -74,9 +74,12 @@ static int	ft_init(char **argv, int x)
 		return (ft_err());
 	if (ft_issorted(*a))
 		return (clear_stack(a));
-	b = malloc (sizeof(t_stack));
+	b = malloc (sizeof(t_stack **));
 	if (!b)
+	{
+		ft_err();
 		return (clear_stack(a));
+	}
 	*b = NULL;
 	ft_pushswap(a, b);
 	if (x == 0)
