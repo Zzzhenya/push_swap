@@ -17,21 +17,20 @@ all: $(NAME)
 $(NAME): $(LIBFT)
 	cc -Wall -Werror -Wextra $(SRCS) $(LIBFT) -o $(NAME)
 
-$(LIBFT):libft/libft.a
-	cp libft/libft.a $(LIBFT)
+$(LIBFT):libft/$(LIBFT)
+	cp libft/$(LIBFT) $(LIBFT)
 
-libft/libft.a:
+libft/$(LIBFT):
 	$(MAKE) -C ./libft
 
 clean:
 	$(MAKE) clean -C ./libft
-	rm -f $(OBJS)
-	rm -f $(LIBFT)
+	rm -f $(NAME)
 
 fclean: clean
 	$(MAKE) fclean -C ./libft
-	rm -f $(NAME)
+	rm -f $(LIBFT)
 
 re: fclean all
 
-.PHONY: all fclean re clean tests
+.PHONY: all fclean re clean
