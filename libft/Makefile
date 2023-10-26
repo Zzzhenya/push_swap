@@ -57,9 +57,8 @@ SRCS 	= 	ft_bzero.c \
 			get_next_line.c \
 			get_next_line_utils.c \
 			ft_isspace.c \
-			ft_atoll.c
-
-SRCSB 	= 	ft_lstnew.c \
+			ft_atoll.c \
+			ft_lstnew.c \
 			ft_lstadd_front.c \
 			ft_lstsize.c \
 			ft_lstlast.c \
@@ -70,8 +69,6 @@ SRCSB 	= 	ft_lstnew.c \
 
 OBJS	= $(SRCS:.c=.o)
 
-OBJSB	= $(SRCSB:.c=.o)
-
 CFLAGS  = -Wall -Werror -Wextra 
 
 all: $(NAME)
@@ -81,14 +78,10 @@ $(NAME): $(OBJS)
 
 clean:
 	rm -f $(OBJS)
-	rm -f $(OBJSB)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-bonus:$(OBJSB)
-	ar rcs $(NAME) $(OBJSB)
-
-.PHONY: all fclean re clean bonus 
+.PHONY: all fclean re clean
