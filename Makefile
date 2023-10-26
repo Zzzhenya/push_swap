@@ -2,6 +2,8 @@ NAME = push_swap
 
 LIBFT = libft.a
 
+CFLAGS = -Wall -Werror -Wextra
+
 SRCS = 		push_swap.c \
 			main.c \
 			stack_utils.c \
@@ -15,21 +17,25 @@ SRCS = 		push_swap.c \
 all: $(NAME)
 
 $(NAME): $(LIBFT)
-	cc -Wall -Werror -Wextra $(SRCS) $(LIBFT) -o $(NAME)
+	@cc $(CFLAGS) $(SRCS) $(LIBFT) -o $(NAME)
+	@echo "...push_swap compiled."
 
 $(LIBFT):libft/$(LIBFT)
-	cp libft/$(LIBFT) $(LIBFT)
+	@cp libft/$(LIBFT) $(LIBFT)
+	@echo "...libft.a copied to current directory."
 
 libft/$(LIBFT):
-	$(MAKE) -C ./libft
+	@$(MAKE) -C ./libft
 
 clean:
-	$(MAKE) clean -C ./libft
-	rm -f $(NAME)
+	@$(MAKE) clean -C ./libft
+	@rm -f $(NAME)
+	@echo "...push_swap program cleaned."
 
 fclean: clean
-	$(MAKE) fclean -C ./libft
-	rm -f $(LIBFT)
+	@$(MAKE) fclean -C ./libft
+	@rm -f $(LIBFT)
+	@echo "...libft.a cleaned."
 
 re: fclean all
 
