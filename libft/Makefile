@@ -74,13 +74,16 @@ CFLAGS  = -Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
+	@echo "...libft compiled."
 
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
+	@echo "...libft OBJs cleaned."
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "...libft.a removed."
 
 re: fclean all
 
