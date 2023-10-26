@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	parse_for_dup(char **argv, int x)
+static int	parse_for_dup(char **argv, int x)
 {
 	int			i;
 	int			j;
@@ -40,7 +40,7 @@ int	parse_for_dup(char **argv, int x)
 	return (0);
 }
 
-int	parse_for_type(char *str)
+static int	parse_for_type(char *str)
 {
 	int		digits;
 	int		i;
